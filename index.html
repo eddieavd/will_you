@@ -2,10 +2,50 @@
 <html>
         <head>
                 <title>Will you?</title>
+                <link rel="stylesheet" href="app.css">
         </head>
         <body>
-                <div class="container">
-                        <h1>Will you?</h1>
+                <div id="form_div" class="container">
+                        <form>
+                                <div class="row">
+                                        <div class="col-25">
+                                                <label for="fname">First Name</label>
+                                        </div>
+                                        <div class="col-75">
+                                                <input type="text" id="fname" name="firstname" placeholder="your name...">
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-25">
+                                                <label for="lname">Last Name</label>
+                                        </div>
+                                        <div class="col-75">
+                                                <input type="text" id="lname" name="firstname" placeholder="your last name...">
+                                        </div>
+                                </div>
+                        </form>
+                        <div class="row">
+                                <button id="form_btn">Submit</button>
+                        </div>
                 </div>
+                <div id="survey_div" class="oldcontainer">
+                        <div>
+                                <img id="surv_img" src="https://c.tenor.com/-uvwtNVML80AAAAC/tenor.gif"></img>
+                        </div>
+                        <div class="oldcontainer">
+                                <h1>Will you be mine?</h1>
+                                <button id="yes_btn">Yes</button>
+                                <button id="no_btn">No</button>
+                        </div>
+                </div>
+                <div id="success_div" class="oldcontainer">
+                        <div id="had_nos_div" class="hidden"><h1>i bolje ti je</h1></div>
+                        <img id="succ_img" src="https://c.tenor.com/lFwxpxfGHWUAAAAC/tenor.gif"></img>
+                </div>
+                <div id="error_div" class="oldcontainer">
+                        <h1>WHO IS YOU</h1>
+                        <img src="https://c.tenor.com/9tU6-PyLzMkAAAAC/tenor.gif"></img>
+                </div>
+                <script src="app.js"></script>
         </body>
 </html>
