@@ -46,19 +46,35 @@ function open_survey ()
         surv_div.classList.remove( "hidden" );
 }
 
+function scary ()
+{
+        const body = document.getElementById( "errbox_id" );
+        const text = document.getElementById( "whodis_id" );
+
+        if( body.style.backgroundColor === "rgb(255, 0, 0)" )
+        {
+                body.style.backgroundColor = "#000000";
+                text.style.color = "#FFFFFF";
+        }
+        else
+        {
+                body.style.backgroundColor = "#FF0000";
+                text.style.color = "#000000";
+        }
+}
+
 function show_error ()
 {
         console.error( "ERROR: auth failed" );
 
         form_div.classList.   add( "hidden" );
          err_div.classList.remove( "hidden" );
+
+        window.setInterval( scary, 100 );
 }
 
-function verify_auth ()
+function verify_auth ( fname, lname )
 {
-        const fname = fname_field.value;
-        const lname = lname_field.value;
-
         const fullname = fname.toLowerCase() + lname.toLowerCase();
 
         if( fullname.hashCode() === auth_hash )
@@ -73,7 +89,16 @@ function verify_auth ()
 
 function check_form ()
 {
-        if( !verify_auth() )
+        const fname = fname_field.value;
+        const lname = lname_field.value;
+
+        if( fname === "" || lname === "" )
+        {
+                document.getElementById( "ident_id" ).classList.remove( "hidden" );
+                return;
+        }
+
+        if( !verify_auth( fname, lname ) )
         {
                 show_error();
         }
