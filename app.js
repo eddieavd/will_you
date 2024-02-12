@@ -112,6 +112,7 @@ function check_form ()
 function play_video ()
 {
         let iframe = document.createElement( "iframe" );
+        let   desc = document.createElement( "p" );
 
         iframe.setAttribute( "src", "https://www.youtube.com/embed/EV6RnQOPTN4?autoplay=1&rel=0" );
 
@@ -121,7 +122,11 @@ function play_video ()
 
         iframe.style.width = "100%";
 
+        desc.innerHTML = "ovo bi trebalo autoplayat al me nekad zajebava oprostity";
+        desc.style.fontSize = "36px";
+
         succ_div.append( iframe );
+        succ_div.append(   desc );
 }
 
 function on_yes ()
