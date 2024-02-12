@@ -11,6 +11,7 @@ const form_btn = document.getElementById( "form_btn" );
 
 const yes_btn = document.getElementById( "yes_btn" );
 const  no_btn = document.getElementById(  "no_btn" );
+const gay_btn = document.getElementById( "gay_btn" );
 
 const surv_img = document.getElementById( "surv_img" );
 const succ_img = document.getElementById( "succ_img" );
@@ -108,6 +109,21 @@ function check_form ()
         }
 }
 
+function play_video ()
+{
+        let iframe = document.createElement( "iframe" );
+
+        iframe.setAttribute( "src", "https://www.youtube.com/embed/EV6RnQOPTN4?autoplay=1&rel=0" );
+
+        iframe.setAttribute( "frameborder", "0" );
+        iframe.setAttribute( "allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" );
+        iframe.setAttribute( "allowfullscreen", "" );
+
+        iframe.style.width = "100%";
+
+        succ_div.append( iframe );
+}
+
 function on_yes ()
 {
         console.log( "INFO: YES!!!" );
@@ -121,6 +137,8 @@ function on_yes ()
 
         surv_div.classList.   add( "hidden" );
         succ_div.classList.remove( "hidden" );
+
+        play_video();
 }
 
 function on_no ()
@@ -143,9 +161,20 @@ function on_no ()
          no_btn.style.fontSize = "" + (  no_h / 2 - 2 ) + "px";
 }
 
+function on_gay ()
+{
+        document.getElementById( "notes_img" ).classList.add( "hidden" );
+        document.getElementById(  "succ_img" ).classList.add( "hidden" );
+
+        document.getElementById( "gay_btn" ).classList.add( "hidden" );
+        document.getElementById( "gay_img" ).classList.remove( "hidden" );
+        document.getElementById( "gay_txt" ).classList.remove( "hidden" );
+}
+
 form_btn.addEventListener( "click", check_form );
 
 yes_btn.addEventListener( "click", on_yes );
  no_btn.addEventListener( "click", on_no  );
+gay_btn.addEventListener( "click", on_gay );
 
 main();
