@@ -32,13 +32,6 @@ String.prototype.hashCode = function() {
         return hash;
 }
 
-function main ()
-{
-        surv_div.classList.add( "hidden" );
-        succ_div.classList.add( "hidden" );
-         err_div.classList.add( "hidden" );
-}
-
 function open_survey ()
 {
         console.log( "INFO: auth passed" );
@@ -137,7 +130,7 @@ function on_yes ()
         {
                 document.getElementById( "had_nos_div" ).classList.remove( "hidden" );
         }
-        succ_img.style.width  = "100%";
+        succ_img.style. width = "100%";
         succ_img.style.height = "100%";
 
         surv_div.classList.   add( "hidden" );
@@ -181,5 +174,3 @@ form_btn.addEventListener( "click", check_form );
 yes_btn.addEventListener( "click", on_yes );
  no_btn.addEventListener( "click", on_no  );
 gay_btn.addEventListener( "click", on_gay );
-
-main();
